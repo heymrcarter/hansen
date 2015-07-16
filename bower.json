@@ -1,0 +1,21 @@
+{
+  "name": "hansen",
+  "version": "1.0.0",
+  "authors": [
+    "Tom Carter"
+  ],
+  "description": "The website for A.L. Hansen Paint and Metal",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3"
+  }
+}
