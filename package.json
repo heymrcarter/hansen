@@ -8,5 +8,12 @@
     "start": "node server.js"
   },
   "author": "Tom Carter",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "compression": "^1.5.1",
+    "express": "^4.13.1",
+    "jquery": "^2.1.4",
+    "morgan": "^1.6.1"
+  }
 }
