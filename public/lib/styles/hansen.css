@@ -1,6 +1,7 @@
 .header {
 	background-color: #010067;
 	padding: 10px;
+	margin-bottom: 25px;
 }
 
 .magellan-container {
@@ -13,3 +14,111 @@
 }
 
 .grey-stripe { background-color: #eee; }
+
+.large { font-size: 18px; }
+
+.toggle-content {
+	position: relative;
+	
+	transition-duration: .9s;
+	transition-property: opacity;
+	transition-timing-function: ease;
+}
+
+.toggle-content.inactive {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: -9999px;
+}
+
+.toggle-content.active {
+	opacity: 1;
+	width: inherit;
+	height: inherit;
+	position: relative;
+}
+
+.toggle-control {
+	list-style: none;
+	text-align: center;
+}
+
+.toggle-control li {
+	display: inline-block;
+	vertical-align: middle;
+	height: 30px;
+	line-height: 30px;
+}
+
+.toggle-control li.first {
+	margin-right: 10px;
+}
+
+.toggle-control li a {
+	display: block;
+	position: relative;
+}
+
+.toggle-control li a.left-control {
+	padding-right: 27px;
+}
+
+.toggle-control li a.right-control {
+
+}
+
+.toggle-control li.first .control-text { margin-right: 4px; }
+.toggle-control li.last .control-text { margin-left: 4px; }
+
+.toggle-control .indicator {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 5px #ccc;
+	position: absolute;
+	
+	transition-duration: .25s;
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+}
+
+.toggle-control li a.left-control .indicator {
+	right: 0px;
+	top: 8px;
+}
+
+.toggle-control li a.right-control .indicator {
+	left: 0px;
+	top: 7px;
+}
+
+.toggle-control li a.left-control .indicator.active {
+	top: 3px;
+}
+
+.toggle-control .control-text {
+	display: inline-block;
+	position: relative;
+}
+
+.toggle-control li a.right-control .control-text {
+	padding-left: 28px;
+}
+
+.toggle-control .indicator.active {
+	width: 25px;
+	height: 25px;
+	top: 6px;
+}
+
+.toggle-control li a.right-control .indicator.active {
+	top: 2px;
+}
+
+.button {
+	background-color: #010067;
+}
