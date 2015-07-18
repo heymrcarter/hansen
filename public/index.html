@@ -10,7 +10,8 @@
 		<meta name="viewport" content="width=device-width initial-scale=1">
 
 		<link rel="apple-touch-icon" href="">
-		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="lib/styles/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/styles/hansen.css">
 	</head>
 
 	<body>
@@ -18,8 +19,34 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		
-		<h1>Home</h1>
 		
-		<script src=""></script>
+		<header class="header">
+			<div class="container">
+				<a href="/"><img src="lib/images/hansen-logo.png" alt="Hansen logo"/></a>
+				
+				<ul class="menu list-inline">
+					<li><a href="about.html">About</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</header>
+		
+		<section class="content">
+			
+		</section>
+		
+		<footer class="footer">
+			<p class="legal">&copy; <span id="current-year"></span> A.L. Hansen Paint and Metal, Inc. All Rights Reserved</p>
+		</footer>
+		
+		
+		<script src="lib/scripts/jquery,min.js" async></script>
+		<script>
+			var currentYearElement = document.getElementById('current-year');
+			var now = new Date();
+			currentYearElement.innerText = now.getFullYear();
+		</script>
 	</body>
 </html>
