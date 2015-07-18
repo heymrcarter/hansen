@@ -1,3 +1,15 @@
 .header {
 	background-color: #010067;
+	padding: 10px;
 }
+
+.magellan-container {
+	background-color: inherit;
+	min-width: inherit;
+}
+
+.content-section {
+	min-height: 500px;
+}
+
+.grey-stripe { background-color: #eee; }

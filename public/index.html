@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width initial-scale=1">
 
 		<link rel="apple-touch-icon" href="">
-		<link rel="stylesheet" href="lib/styles/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/styles/foundation.min.css">
 		<link rel="stylesheet" href="lib/styles/hansen.css">
 	</head>
 
@@ -21,28 +21,65 @@
 		
 		
 		<header class="header">
-			<div class="container">
-				<a href="/"><img src="lib/images/hansen-logo.png" alt="Hansen logo"/></a>
+			<div class="row">
+				<a href="/" class="left"><img src="lib/images/hansen-logo.png" alt="Hansen logo"/></a>
 				
-				<ul class="menu list-inline">
-					<li><a href="about.html">About</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
+				<div class="magellan-container right" data-magellan-expedition="fixed">
+					<dl class="sub-nav">
+						<dd data-magellan-arrival="about"><a href="#about">About</a></dd>
+						<dd data-magellan-arrival="services"><a href="#services">Services</a></dd>
+						<dd data-magellan-arrival="contact"><a href="#contact">Contact</a></dd>
+						<dd data-magellan-arrival="gallery"><a href="#gallery">Gallery</a></dd>
+					</dl>
+				</div>
 			</div>
 		</header>
 		
 		<section class="content">
+			<section id="about" class="content-section row">
+				<h2 data-magellan-destination="about">A clever headline</h2>
+				<a name="about"></a>
+				
+				<div class="row">
+					<div class="large-7 columns">
+						<p>At the turn of the century, Mr. Hansen was painting houses, picket fences, buggies and whatever else needed painting. The automotive industries started rolling, in which Mr. Hansen had foreseen the consumer's need for automotive care. He established his company in 1908; located in St. Matthews, Kentucky, where it became a complete success. An employee, James (Jim) Brangers, and William F. Datwyler purchased the company from Mr. Hansen upon his retirement in 1955. Mr. Hansen sold the property in St. Matthews to Bacon's Department store; then, in 1956, Mr Brangers and Mr. Datwyler purchased property at 2620 West Chestnut St in Downtown Louisville and relocated the business where it resides today. In 1977, Mr Brangers and Mr Datwyler retired. They sold the business to Mr. Brangers' son, James (Jim) J. Brangers Sr. He operates the business with the help of his wife Marcella; daughter, Wanda; son, Joe, and a fine group of fine professional men. In 1998, the property next door was purchased for office use.</p>	
+					</div>	
+					
+					<div class="large-5 columns">
+						<img src="http://placehold.it/400x350">	
+					</div>
+				</div>
+				
+			</section>
 			
+			<section id="services" class="content-section grey-stripe">
+				<div class="row">
+					<h2 data-magellan-destination="services">Services</h2>
+					<a name="services"></a>
+				</div>
+			</section>
+			
+			<section id="contact" class="content-section row">
+				<h2 data-magellan-destination="contact">Contact</h2>
+				<a name="contact"></a>
+			</section>
+			
+			<section id="gallery" class="content-section row">
+				<h2 data-magellan-destination="gallery">Gallery</h2>
+				<a name="gallery"></a>
+			</section>
 		</section>
 		
 		<footer class="footer">
-			<p class="legal">&copy; <span id="current-year"></span> A.L. Hansen Paint and Metal, Inc. All Rights Reserved</p>
+			<div class="row">
+				<p class="legal">&copy; <span id="current-year"></span> A.L. Hansen Paint and Metal, Inc. All Rights Reserved</p>
+			</div>
 		</footer>
 		
 		
-		<script src="lib/scripts/jquery,min.js" async></script>
+		<script src="lib/scripts/jquery.min.js"></script>
+		<script src="lib/scripts/foundation/foundation.js"></script>
+		<script src="lib/scripts/foundation/foundation.magellan.js"></script>
 		<script>
 			var currentYearElement = document.getElementById('current-year');
 			var now = new Date();
