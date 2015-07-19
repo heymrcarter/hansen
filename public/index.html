@@ -40,16 +40,43 @@
 				<h2 data-magellan-destination="about">A clever headline</h2>
 				<a name="about"></a>
 				
-				<div class="row">
-					<div class="large-7 columns">
-						<p>At the turn of the century, Mr. Hansen was painting houses, picket fences, buggies and whatever else needed painting. The automotive industries started rolling, in which Mr. Hansen had foreseen the consumer's need for automotive care. He established his company in 1908; located in St. Matthews, Kentucky, where it became a complete success. An employee, James (Jim) Brangers, and William F. Datwyler purchased the company from Mr. Hansen upon his retirement in 1955. Mr. Hansen sold the property in St. Matthews to Bacon's Department store; then, in 1956, Mr Brangers and Mr. Datwyler purchased property at 2620 West Chestnut St in Downtown Louisville and relocated the business where it resides today. In 1977, Mr Brangers and Mr Datwyler retired. They sold the business to Mr. Brangers' son, James (Jim) J. Brangers Sr. He operates the business with the help of his wife Marcella; daughter, Wanda; son, Joe, and a fine group of fine professional men. In 1998, the property next door was purchased for office use.</p>	
-					</div>	
+				<div class="row toggle-container">
+					<div id="do" class="toggle-content large-12 columns" data-match-height>
+						<div class="row">
+							<div class="large-7 columns">
+								<p class="large">At Hansen's we repair all types of body damage. We have the facilities to repair and paint any type of vehicle, from the smallest automobiles to the largest trucks. We major in commercial vehicles and we have the technicians it takes to turn out quality workmanship.</p>
+								
+								<ul class="button-group">
+									<li><a href="#services" class="button">Services we offer</a></li>
+									<li><a href="#gallery" class="button">See our handiwork</a></li>
+									<li><a href="#contact" class="button">Get in touch</a></li>
+							</div>
+							
+							<div class="large-5 columns">
+								<img src="http://placehold.it/400x350">
+							</div>
+						</div>
+					</div>
 					
-					<div class="large-5 columns">
-						<img src="http://placehold.it/400x350">	
+					<div id="story" class="toggle-content large-12 columns" data-match-height>						
+						<div class="row">
+							<div class="large-7 columns">
+								<h3 class="subheader">Established 1908 by A.L. (Ollie) Hansen</h3>
+								<p>At the turn of the century, Mr. Hansen was painting houses, picket fences, buggies and whatever else needed painting. The automotive industries started rolling, in which Mr. Hansen had foreseen the consumer's need for automotive care. He established his company in 1908; located in St. Matthews, Kentucky, where it became a complete success. An employee, James (Jim) Brangers, and William F. Datwyler purchased the company from Mr. Hansen upon his retirement in 1955. Mr. Hansen sold the property in St. Matthews to Bacon's Department store; then, in 1956, Mr Brangers and Mr. Datwyler purchased property at 2620 West Chestnut St in Downtown Louisville and relocated the business where it resides today. In 1977, Mr Brangers and Mr Datwyler retired. They sold the business to Mr. Brangers' son, James (Jim) J. Brangers Sr. He operates the business with the help of his wife Marcella; daughter, Wanda; son, Joe, and a fine group of fine professional men. In 1998, the property next door was purchased for office use.</p>	
+							</div>	
+							
+							<div class="large-5 columns">
+								<img src="http://placehold.it/400x350">	
+							</div>
+						</div>
 					</div>
 				</div>
-				
+				<div class="row">					
+					<ul class="toggle-control">
+						<li class="first"><a href="#do" class="left-control"><span class="control-text">What we do</span> <span class="indicator"></span></a></li>
+						<li class="last"><a href="#story" class="right-control"><span class="indicator"></span> <span class="control-text">Our story</span></a></li>							
+					</ul>
+				</div>				
 			</section>
 			
 			<section id="services" class="content-section grey-stripe services-background">				
@@ -90,24 +117,24 @@
 									
 									<h3>Decaling:</h3>
 									<ul>
-										<li>Signs of any Kind</li>
-										<li>Lettering & Striping</li>
+										<li>Signs of any kind</li>
+										<li>Lettering & striping</li>
 									</ul>	
 								</div>								
 							</div>
 							
 							<div class="large-4 columns" data-match-height>
 								<div class="navy-tint">
-									<h3>Guaranteed Color Match with DuPont Paint System</h3>
+									<h3>Guaranteed color match with DuPont paint system</h3>
 								
 									<h3>We offer:</h3>
 									<ul>
-										<li>Competitive Prices</li>
-										<li>Quality Body & Paint Work</li>
-										<li>On Site Estimates</li>
-										<li>Courtesy Pick-up and Delivery by Licenced CDL Drivers</li>
-										<li>Tows When Needed</li>
-										<li>Will Work with Your Insurance</li>
+										<li>Competitive prices</li>
+										<li>Quality body & paint work</li>
+										<li>On site estimates</li>
+										<li>Courtesy pick-up and delivery by licenced CDL drivers</li>
+										<li>Tows when needed</li>
+										<li>Will work with your insurance</li>
 									</ul>
 								</div>							
 							</div>						
@@ -137,10 +164,27 @@
 		<script src="lib/scripts/jquery.min.js"></script>
 		<script src="lib/scripts/foundation/foundation.js"></script>
 		<script src="lib/scripts/foundation/foundation.magellan.js"></script>
+		<script src="lib/scripts/equalizer.js"></script>
+		<script src="lib/scripts/toggle.js"></script>
 		<script>
 			var currentYearElement = document.getElementById('current-year');
 			var now = new Date();
 			currentYearElement.innerText = now.getFullYear();
+			
+			var aboutEqualizer = Equalizer('.toggle-container');
+			var servicesEqualizer = Equalizer('#service-columns');
+			
+			var aboutToggle = Toggle({
+				defaultPanel: '#do',
+				onBecomeActive: function ($control, $panel) {
+					$control.find('.indicator').addClass('active');
+					$control.addClass('active');
+				},
+				onBecomeInactive: function ($control, $panel) {
+					$control.find('.indicator').removeClass('active');
+					$control.removeClass('active');
+				}
+			});	
 		</script>
 	</body>
 </html>
