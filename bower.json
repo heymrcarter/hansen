@@ -13,11 +13,12 @@
     "bower_components",
     "app/bower_components",
     "test",
-    "tests"
+    "tests",
+    "./bower_components"
   ],
   "dependencies": {
     "modernizr": "~2.8.3",
-    "bootstrap": "~3.3.5",
     "foundation": "~5.5.2"
-  }
+  },
+  "homepage": "https://github.com/heymrcarter/hansen"
 }
