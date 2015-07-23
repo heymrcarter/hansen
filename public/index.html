@@ -144,8 +144,75 @@
 			</section>
 			
 			<section id="contact" class="content-section row">
-				<h2 data-magellan-destination="contact">Contact</h2>
+				<h2 data-magellan-destination="contact">Get in touch</h2>
 				<a name="contact"></a>
+				<p>Thank you for your interest in A.L. Hansen Paint & Metal. We appreciate your business. Please feel free to call us to an schedule an appointment for  and estimate, or use the form below.</p>
+				
+				<div class="large-6 columns" id="form-container" data-error-list-parent>
+					<form id="contact-form" method="post" action="/contact" data-cover-parent class="row">
+						<div class="large-12 columns">
+							<label>Name
+								<input type="text" id="contact-name" name="contact-name">
+							</label>
+						</div>
+						
+						<div class="large-12 columns">
+							<label>Phone
+								<input type="tel" id="contact-phone" name="contact-phone">
+							</label>
+						</div>
+						
+						<div class="large-12 columns">
+							<label>Email
+								<input type="email" id="contact-email" name="contact-email">
+							</label>
+						</div>
+						
+						<div class="large-12 columns">
+							<label>Vehicle year
+								<input type="text" id="contact-vehicle-year" name="contact-vehicle-year">
+							</label>			
+						</div>
+						
+						<div class="large-12 columns">
+							<label>Vehicle make
+								<input type="text" id="contact-vehicle-make" name="contact-vehicle-make">
+							</label>
+						</div>
+						
+						<div class="large-12 columns">
+							<label>Vehicle model
+								<input type="text" id="contact-vehicle-model" name="contact-vehicle-model">
+							</label>
+						</div>
+						
+						<div class="large-12 columns">
+							<label>Additional comments
+								<textarea id="contact-comments" name="contact-comments" rows="10"></textarea>
+							</label>
+						</div>
+						
+						<div class="large-12 columns">
+							<button type="submit" class="button">Submit</button>
+						</div>
+					</form>
+				</div>
+				
+				<div class="large-offset-1 large-5 columns">
+					<ul class="vcard">
+						<li class="fn">A.L. Hansen Paint & Metal Shop, Inc.</li>
+						<li class="street-address">2612 West Chestnut Street</li>
+						<li class="locality">Louisville</li>
+						<li><span class="state">Kentucky</span>, <span class="zip">40211</span></li>
+						<li class="phone"><strong>Phone:</strong> (502) 774-2947</li>
+						<li class="fax"><strong>Fax:</strong> (502) 774-8952</li>
+						<li><strong>Hours:</strong> <span class="hours">7:30 am - 4:30 pm</span></li>
+					</ul>
+					
+					<div class="map">
+						<div id="hansen-map"></div>
+					</div>
+				</div>
 			</section>
 			
 			<section id="gallery" class="content-section row">
@@ -160,12 +227,53 @@
 			</div>
 		</footer>
 		
-		
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrAWSIr4l9mmtHR9waioe2u-XGQRo3VHA"></script>
 		<script src="lib/scripts/jquery.min.js"></script>
+		<script src="lib/scripts/jquery.mockjax.min.js"></script>
+		<script src="lib/scripts/pubsub.js"></script>
 		<script src="lib/scripts/foundation/foundation.js"></script>
 		<script src="lib/scripts/foundation/foundation.magellan.js"></script>
 		<script src="lib/scripts/equalizer.js"></script>
 		<script src="lib/scripts/toggle.js"></script>
+		<script src="lib/scripts/geocoder.js"></script>
+		<script src="lib/scripts/map.js"></script>
+		<script src="lib/scripts/regex.js"></script>
+		<script src="lib/scripts/validator.js"></script>
+		<script src="lib/scripts/inquiry.js"></script>
+		<script src="lib/scripts/inquiry-validator.js"></script>
+		<script src="lib/scripts/inquiry-map.js"></script>
+		<script src="lib/scripts/mailer.js"></script>
+		<script src="lib/scripts/alert.js"></script>
+		<script src="lib/scripts/cover.js"></script>
+		<script src="lib/scripts/error-list.js"></script>
+		<script src="lib/scripts/form.js"></script>
+		
+		<script data-development="true">
+			$.mockjax({
+				url: '/contact',
+				status: 202,
+				statusText: 'Accepted',
+				responseText: {
+					error: false,
+					errors: [],
+					message: 'Inquiry submitted',
+					alert: 'Thank you for your inquiry. We\'ll be in touch soon!'	
+				}
+			});
+			
+			$.mockjax({
+				url: '/contact_error',
+				status: 400,
+				statusText: 'Bad request',
+				responseText: {
+					error: true,
+					errors: ['Vehicle model is a required field. Please enter a valid vehicle model!'],
+					message: 'An error occurred',
+					alert: 'Oops! One of your answers didn\'t match what we expected. Please correct the questions marked in red below.'
+				}
+			});
+		</script>
+		
 		<script>
 			var currentYearElement = document.getElementById('current-year');
 			var now = new Date();
@@ -184,7 +292,16 @@
 					$control.find('.indicator').removeClass('active');
 					$control.removeClass('active');
 				}
-			});	
+			});
+			
+			var map = Map({
+				element: 'hansen-map',
+				address: '2612 W. Chestnut St Louisville, KY 40211',
+				zoom: 18
+			});
+			
+			var contactForm = Form('#contact-form');
+			
 		</script>
 	</body>
 </html>
