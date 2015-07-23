@@ -18,6 +18,10 @@
   "dependencies": {
     "modernizr": "~2.8.3",
     "bootstrap": "~3.3.5",
-    "foundation": "~5.5.2"
+    "foundation": "~5.5.2",
+    "pubsub-js": "~1.5.2"
+  },
+  "devDependencies": {
+    "jquery-mockjax": "~2.0.1"
   }
 }
