@@ -142,3 +142,11 @@
 .button {
 	background-color: #010067;
 }
+
+.fader-fade-out {
+	opacity: 100%;
+}
+
+.fader-fade-in {
+	opacity: 0;
+}
