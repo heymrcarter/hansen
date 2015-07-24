@@ -33,8 +33,6 @@
 	text-shadow: 2px 2px 0px #000;
 }
 
-.grey-stripe { background-color: #eee; }
-
 .large { font-size: 18px; }
 
 .toggle-content {
@@ -143,10 +141,32 @@
 	background-color: #010067;
 }
 
-.fader-fade-out {
-	opacity: 100%;
+.content-overlay {
+	width: 100%;
+	min-height: 727px;
+	position: relative;
 }
 
-.fader-fade-in {
+.content-overlay::after {
+	content: '';
+	background-image: url('/lib/images/services-large.jpg');
+	background-repeat: no-repeat;
+	opacity: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	transition: opacity 2s;
+}
+
+.content-overlay.transparent::after {
+	opacity: 0;
+	transition: opacity 2s;
+
+}
+
+.content-overlay .overlaying-content {
 	opacity: 0;
 }
