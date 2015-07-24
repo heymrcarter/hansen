@@ -10,13 +10,12 @@
 }
 
 .content-section {
-	min-height: 500px;
-	position: relative;
-	z-index: 200;
+	position: relative;	
 }
 
 .services-background {
 	background: url('/lib/images/services-large.jpg') no-repeat;
+	min-height: 500px;
 }
 
 .grey-stripe { background-color: #eee; }
@@ -33,8 +32,6 @@
 	text-shadow: 2px 2px 0px #000;
 }
 
-.grey-stripe { background-color: #eee; }
-
 .large { font-size: 18px; }
 
 .toggle-content {
@@ -47,7 +44,6 @@
 
 .toggle-content.inactive {
 	opacity: 0;
-	width: 0;
 	height: 0;
 	position: absolute;
 	left: -9999px;
@@ -105,6 +101,7 @@
 	transition-property: all;
 	transition-timing-function: ease-in-out;
 }
+/*works*/
 
 .toggle-control li a.left-control .indicator {
 	right: 0px;
@@ -208,4 +205,8 @@
 .error-list.inactive {
 	position: absolute;
 	left: -9999px;
+}
+
+.footer {
+	margin-top: 50px;
 }

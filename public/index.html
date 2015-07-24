@@ -12,6 +12,8 @@
 		<link rel="apple-touch-icon" href="">
 		<link rel="stylesheet" href="lib/styles/foundation.min.css">
 		<link rel="stylesheet" href="lib/styles/hansen.css">
+		
+		<script src="lib/scripts/modernizr.js"></script>
 	</head>
 
 	<body>
@@ -216,8 +218,18 @@
 			</section>
 			
 			<section id="gallery" class="content-section row">
-				<h2 data-magellan-destination="gallery">Gallery</h2>
 				<a name="gallery"></a>
+				<h2 data-magellan-destination="gallery">Gallery</h2>
+				<p>Have a look at our photo gallery to see before and after photos and see our handiwork for yourself.</p>
+				
+				<ul class="clearing-thumbs" data-clearing>
+					<li><a href="lib/images/gallery/full/bus_before.png"><img data-caption="Bus before" src="lib/images/gallery/thumbnail/bus_before.png"></a></li>	
+					<li><a href="lib/images/gallery/full/bus_after.png"><img data-caption="Bus after" src="lib/images/gallery/thumbnail/bus_after.png"></a></li>
+					<li><a href="lib/images/gallery/full/caddy_before.png"><img data-caption="Cadillac before" src="lib/images/gallery/thumbnail/caddy_before.png"></a></li>
+					<li><a href="lib/images/gallery/full/caddy_after.png"><img data-caption="Cadillac after" src="lib/images/gallery/thumbnail/caddy_after.png"></a></li>
+					<li><a href="lib/images/gallery/full/challenger_before.png"><img data-caption="Challenger before" src="lib/images/gallery/thumbnail/challenger_before.png"></a></li>
+					<li><a href="lib/images/gallery/full/challenger_after.png"><img data-caption="Challenger after" src="lib/images/gallery/thumbnail/challenger_after.png"></a></li>
+				</ul>
 			</section>
 		</section>
 		
@@ -231,8 +243,9 @@
 		<script src="lib/scripts/jquery.min.js"></script>
 		<script src="lib/scripts/jquery.mockjax.min.js"></script>
 		<script src="lib/scripts/pubsub.js"></script>
-		<script src="lib/scripts/foundation/foundation.js"></script>
+		<script src="lib/scripts/foundation.js"></script>
 		<script src="lib/scripts/foundation/foundation.magellan.js"></script>
+		<script src="lib/scripts/foundation.clearing.js"></script>
 		<script src="lib/scripts/equalizer.js"></script>
 		<script src="lib/scripts/toggle.js"></script>
 		<script src="lib/scripts/geocoder.js"></script>
@@ -242,7 +255,6 @@
 		<script src="lib/scripts/inquiry.js"></script>
 		<script src="lib/scripts/inquiry-validator.js"></script>
 		<script src="lib/scripts/inquiry-map.js"></script>
-		<script src="lib/scripts/mailer.js"></script>
 		<script src="lib/scripts/alert.js"></script>
 		<script src="lib/scripts/cover.js"></script>
 		<script src="lib/scripts/error-list.js"></script>
@@ -302,6 +314,7 @@
 			
 			var contactForm = Form('#contact-form');
 			
+			$(document).foundation();			
 		</script>
 	</body>
 </html>
