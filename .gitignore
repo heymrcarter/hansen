@@ -3,4 +3,5 @@ bower_components/*
 app/*
 env-vars.txt
 typings/*
+raw/*
 

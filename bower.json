@@ -18,7 +18,12 @@
   ],
   "dependencies": {
     "modernizr": "~2.8.3",
-    "foundation": "~5.5.2"
+    "foundation": "~5.5.2",
+    "bootstrap": "~3.3.5",
+    "pubsub-js": "~1.5.2"
   },
-  "homepage": "https://github.com/heymrcarter/hansen"
+  "homepage": "https://github.com/heymrcarter/hansen",
+  "devDependencies": {
+    "jquery-mockjax": "~2.0.1"
+  }
 }

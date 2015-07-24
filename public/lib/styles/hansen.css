@@ -5,18 +5,22 @@
 }
 
 .magellan-container {
-	background-color: inherit;
+	background-color: #010067;
 	min-width: inherit;
 }
 
+.magellan-container dd.active a {
+	background-color: #fff;
+	color: #010067;
+}
+
 .content-section {
-	min-height: 500px;
-	position: relative;
-	z-index: 200;
+	position: relative;	
 }
 
 .services-background {
 	background: url('/lib/images/services-large.jpg') no-repeat;
+	min-height: 500px;
 }
 
 .grey-stripe { background-color: #eee; }
@@ -45,7 +49,6 @@
 
 .toggle-content.inactive {
 	opacity: 0;
-	width: 0;
 	height: 0;
 	position: absolute;
 	left: -9999px;
@@ -103,6 +106,7 @@
 	transition-property: all;
 	transition-timing-function: ease-in-out;
 }
+/*works*/
 
 .toggle-control li a.left-control .indicator {
 	right: 0px;
@@ -169,4 +173,75 @@
 
 .content-overlay .overlaying-content {
 	opacity: 0;
+}
+
+.map,
+#hansen-map {
+	height: 424px;
+	width: 100%;
+}
+
+.alert-box { position: relative; }
+
+.alert-box.row { margin-bottom: 25px; }
+
+.alert-box.inactive {
+	position: absolute;
+	left: -99999px;
+}
+.alert-box.active {
+	transition-duration: 200ms;
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+}
+.alert-box.dismissed {
+	position: absolute;
+	left: -9999px;
+} 
+
+[data-cover-parent] {
+	position: relative;
+}
+
+.cover {
+	background-color: #fff;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+.resubmit {
+	position: absolute;
+	bottom: 34px;
+	right: 0;
+	z-index: 1500;
+	opacity: 1;
+}
+
+.error-list {
+	border: 1px solid red;
+	padding: 20px 35px;
+	color: red;
+	margin-bottom: 25px !important;
+}
+
+.error-list { position: relative; }
+
+.error-list.active {
+	transition-duration: 200ms;
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+}
+
+.error-list.inactive {
+	position: absolute;
+	left: -9999px;
+}
+
+.footer {
+	margin-top: 50px;
 }
