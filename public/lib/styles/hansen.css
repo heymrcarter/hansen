@@ -5,8 +5,13 @@
 }
 
 .magellan-container {
-	background-color: inherit;
+	background-color: #010067;
 	min-width: inherit;
+}
+
+.magellan-container dd.active a {
+	background-color: #fff;
+	color: #010067;
 }
 
 .content-section {
