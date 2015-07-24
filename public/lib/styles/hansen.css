@@ -18,11 +18,6 @@
 	position: relative;	
 }
 
-.services-background {
-	background: url('/lib/images/services-large.jpg') no-repeat;
-	min-height: 500px;
-}
-
 .grey-stripe { background-color: #eee; }
 
 .navy-tint {
@@ -141,19 +136,22 @@
 	top: 2px;
 }
 
-.button {
+.button {;
 	background-color: #010067;
 }
 
 .content-overlay {
 	width: 100%;
-	min-height: 727px;
+	min-height: 500px;
+	padding-top: 25px;
 	position: relative;
+	margin-top: 25px
 }
 
 .content-overlay::after {
 	content: '';
-	background-image: url('/lib/images/services-large.jpg');
+	min-height: 727px;
+	background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)), url('/lib/images/services-large.jpg');
 	background-repeat: no-repeat;
 	opacity: 1;
 	top: 0;
