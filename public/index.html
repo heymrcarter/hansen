@@ -307,6 +307,12 @@
 					$control.removeClass('active');
 				}
 			});
+
+			var servicesScrollFader = ScrollFader({
+				backgroundContainerSelector : '.content-overlay',
+				overlayingContentSelector : '.overlaying-content',
+				transparencyTransitionClass : 'transparent'
+			});
 			
 			var map = Map({
 				element: 'hansen-map',

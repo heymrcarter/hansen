@@ -1,14 +1,24 @@
-var fadingOut = $('.content-overlay'),
-	fadingIn = $('.overlaying-content');
+var ScrollFader = (function ($) {
+	return function (userConfig) {
+		var defaults = {
+			backgroundContainerSelector : '.content-overlay',
+			overlayingContentSelector : '.overlaying-content',
+			transparencyTransitionClass : 'transparent'
+		};
+		var config = $.extend({}, defaults, userConfig);
 
-$(window).on('scroll', function(){
-	var scrollPosition = $(this).scrollTop(),
-		fadingOutHeight = fadingOut.height();
+		var fadingOut = $(config.backgroundContainerSelector),
+			fadingIn = $(config.overlayingContentSelector);
 
-	if (1 - scrollPosition/fadingOutHeight <= 0)  {
-		$(fadingOut).addClass('transparent');
-	} else{
-		$(fadingOut).removeClass('transparent');
+		$(window).on('scroll', function () {
+			var scrollPosition = $(this).scrollTop(),
+				fadingOutHeight = fadingOut.height();
+			if (1 - scrollPosition/fadingOutHeight <= 0) {
+				fadingOut.addClass(config.transparencyTransitionClass);
+			} else{
+				fadingOut.removeClass(config.transparencyTransitionClass);
+			}
+			fadingIn.css({'opacity' : (0 + scrollPosition/fadingIn.height())});
+		});
 	};
-	fadingIn.css({'opacity' : (0 + scrollPosition/fadingIn.height())});
-});
+}(window.jQuery))
