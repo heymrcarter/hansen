@@ -75,13 +75,7 @@
 							</div>
 						</div>
 					</div>					
-				</div>	
-				<div class="row">					
-						<ul class="toggle-control">
-							<li class="first"><a href="#do" class="left-control"><span class="control-text">What we do</span> <span class="indicator"></span></a></li>
-							<li class="last"><a href="#story" class="right-control"><span class="indicator"></span> <span class="control-text">Our story</span></a></li>							
-						</ul>
-					</div>			
+				</div>				
 			</section>
 			
 			<section id="services" class="content-section">
@@ -295,18 +289,6 @@
 			
 			var aboutEqualizer = Equalizer('.toggle-container');
 			var servicesEqualizer = Equalizer('#service-columns');
-			
-			var aboutToggle = Toggle({
-				defaultPanel: '#do',
-				onBecomeActive: function ($control, $panel) {
-					$control.find('.indicator').addClass('active');
-					$control.addClass('active');
-				},
-				onBecomeInactive: function ($control, $panel) {
-					$control.find('.indicator').removeClass('active');
-					$control.removeClass('active');
-				}
-			});
 
 			var servicesScrollFader = ScrollFader({
 				backgroundContainerSelector : '.content-overlay',
