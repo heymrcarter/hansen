@@ -21,7 +21,7 @@ gulp.task('compile-sass', function () {
 		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(gutil.env.type === 'production' ? minify() : gutil.noop())
-		.pipe(concat('styles.css'))
+		.pipe(concat('hansen.css'))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('public/dist'));
 });
