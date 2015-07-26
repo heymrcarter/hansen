@@ -19,7 +19,10 @@ module.exports = function () {
 	
 	app.use(bodyParser.json());
 	
-	app.use(express.static('./public'));
+	
+	if (process.env.NODE_ENV === 'development') {
+		app.use(express.static('./public'));	
+	}
 	
 	return app;
 };

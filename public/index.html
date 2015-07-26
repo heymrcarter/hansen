@@ -41,12 +41,15 @@
 		</header>
 		
 		<section class="content">
-			<section id="about" class="content-section row">
-				<h2 data-magellan-destination="about">A clever headline</h2>
+			<section id="about" class="content-section">
 				<a name="about"></a>
 				
-				<div class="row toggle-container">
-					<div id="do" class="toggle-content large-12 columns" data-match-height>
+				<div class="row">
+					<h2 data-magellan-destination="about">A clever headline</h2>	
+				</div>
+				
+				<div class="row">					
+					<div id="do" class="toggle-content large-12 columns">
 						<div class="row">
 							<div class="large-7 columns">
 								<p class="large">At Hansen's we repair all types of body damage. We have the facilities to repair and paint any type of vehicle, from the smallest automobiles to the largest trucks. We major in commercial vehicles and we have the technicians it takes to turn out quality workmanship.</p>
@@ -63,25 +66,21 @@
 							</div>
 						</div>
 					</div>
-					
+				</div>
+				
+				<div class="row">
 					<div id="story" class="toggle-content large-12 columns" data-match-height>						
 						<div class="row">
-							<div class="large-7 columns">
-								<h3 class="subheader">Established 1908 by A.L. (Ollie) Hansen</h3>
-								<p>At the turn of the century, Mr. Hansen was painting houses, picket fences, buggies and whatever else needed painting. The automotive industries started rolling, in which Mr. Hansen had foreseen the consumer's need for automotive care. He established his company in 1908; located in St. Matthews, Kentucky, where it became a complete success. An employee, James (Jim) Brangers, and William F. Datwyler purchased the company from Mr. Hansen upon his retirement in 1955. Mr. Hansen sold the property in St. Matthews to Bacon's Department store; then, in 1956, Mr Brangers and Mr. Datwyler purchased property at 2620 West Chestnut St in Downtown Louisville and relocated the business where it resides today. In 1977, Mr Brangers and Mr Datwyler retired. They sold the business to Mr. Brangers' son, James (Jim) J. Brangers Sr. He operates the business with the help of his wife Marcella; daughter, Wanda; son, Joe, and a fine group of fine professional men. In 1998, the property next door was purchased for office use.</p>	
-							</div>	
-							
 							<div class="large-5 columns">
 								<img src="http://placehold.it/400x350">	
 							</div>
+																
+							<div class="large-7 columns">
+								<h3 class="subheader">Established 1908 by A.L. (Ollie) Hansen</h3>
+								<p>At the turn of the century, Mr. Hansen was painting houses, picket fences, buggies and whatever else needed painting. The automotive industries started rolling, in which Mr. Hansen had foreseen the consumer's need for automotive care. He established his company in 1908; located in St. Matthews, Kentucky, where it became a complete success. An employee, James (Jim) Brangers, and William F. Datwyler purchased the company from Mr. Hansen upon his retirement in 1955. Mr. Hansen sold the property in St. Matthews to Bacon's Department store; then, in 1956, Mr Brangers and Mr. Datwyler purchased property at 2620 West Chestnut St in Downtown Louisville and relocated the business where it resides today. In 1977, Mr Brangers and Mr Datwyler retired. They sold the business to Mr. Brangers' son, James (Jim) J. Brangers Sr. He operates the business with the help of his wife Marcella; daughter, Wanda; son, Joe, and a fine group of fine professional men. In 1998, the property next door was purchased for office use.</p>	
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">					
-					<ul class="toggle-control">
-						<li class="first"><a href="#do" class="left-control"><span class="control-text">What we do</span> <span class="indicator"></span></a></li>
-						<li class="last"><a href="#story" class="right-control"><span class="indicator"></span> <span class="control-text">Our story</span></a></li>							
-					</ul>
 				</div>				
 			</section>
 			
@@ -241,7 +240,7 @@
 			</div>
 		</footer>
 		
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxsS-dJyDwX-NmvYMX-y67ZUt2a78Li_Q"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE0qj2FIV2utUxqWEQ-F2XVYmlmH2Nu_k"></script>
 		<script src="lib/scripts/jquery.min.js"></script>
 		<script src="lib/scripts/jquery.mockjax.min.js"></script>
 		<script src="lib/scripts/pubsub.js"></script>
@@ -294,20 +293,7 @@
 			var now = new Date();
 			currentYearElement.innerText = now.getFullYear();
 			
-			var aboutEqualizer = Equalizer('.toggle-container');
 			var servicesEqualizer = Equalizer('#service-columns');
-			
-			var aboutToggle = Toggle({
-				defaultPanel: '#do',
-				onBecomeActive: function ($control, $panel) {
-					$control.find('.indicator').addClass('active');
-					$control.addClass('active');
-				},
-				onBecomeInactive: function ($control, $panel) {
-					$control.find('.indicator').removeClass('active');
-					$control.removeClass('active');
-				}
-			});
 
 			var servicesScrollFader = ScrollFader({
 				backgroundContainerSelector : '.content-overlay',
