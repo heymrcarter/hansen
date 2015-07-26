@@ -5,11 +5,22 @@ var gulp = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps'),
 	concat = require('gulp-concat'),
 	minify = require('gulp-minify-css'),
+	argv = require('yargs'),
 	uglify = require('gulp-uglify');
 	
 gulp.task('default', ['build']);
 
-gulp.task('build', ['compile-sass', 'compile-js']);
+gulp.task('build', ['compile-sass', 'compile-modernizr', 'compile-js']);
+
+gulp.task('compile-modernizr', function () {
+	return gulp
+		.src('bower_components/modernizr/modernizr.js')
+		.pipe(sourcemaps.init())
+		.pipe(uglify())
+		.pipe(concat('modernizr.min.js'))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('public/dist/'));
+});
 
 gulp.task('compile-sass', function () {
 	return gulp
@@ -20,7 +31,7 @@ gulp.task('compile-sass', function () {
 		])
 		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(gutil.env.type === 'production' ? minify() : gutil.noop())
+		.pipe(argv.production ? minify() : gutil.noop())
 		.pipe(concat('hansen.css'))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('public/dist'));
@@ -48,15 +59,15 @@ gulp.task('compile-js', function () {
 		'source/scripts/form.js'		
 	];
 	
-	if (gutil.env.type !== 'production') {
+	if (argv.production) {
 		order.push('bower_components/jquery-mockjax/src/jquery.mockjax.js');
 	}
 	
 	return gulp
 		.src(order)
 		.pipe(sourcemaps.init())
-		.pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
-		.pipe(gutil.env.type === 'production' ? concat('hansen.min.js') : concat('hansen.js'))
+		.pipe(argv.production ? uglify() : gutil.noop())
+		.pipe(argv.production ? concat('hansen.min.js') : concat('hansen.js'))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('public/dist'));
 });
