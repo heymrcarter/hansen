@@ -4,7 +4,7 @@ app/*
 env-vars.txt
 typings/*
 raw/*
-public/dist/*
+public/dist/
 .DS_Store
 public/.DS_Store
 source/.DS_Store

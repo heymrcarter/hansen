@@ -11,7 +11,7 @@
 
 		<link rel="apple-touch-icon" href="">
 		<link rel="stylesheet" href="dist/hansen.css">
-		
+		<link href="http://vjs.zencdn.net/5.3.0/video-js.css" rel="stylesheet">
 		<script src="dist/modernizr.min.js"></script>
 	</head>
 
@@ -43,20 +43,23 @@
 				<div class="row">					
 					<div id="do" class="large-12 columns">
 						<div class="row">
-							<div class="large-7 columns">
+							<div class="large-6 columns">
 								<a name="about"></a>
 								<h2 data-magellan-destination="about">A clever headline</h2>
 								<p class="large">At Hansen's we repair all types of body damage. We have the facilities to repair and paint any type of vehicle, from the smallest automobiles to the largest trucks. We major in commercial vehicles and we have the technicians it takes to turn out quality workmanship.</p>
 								
-								<ul class="button-group">
-									<li><a href="#services" class="button">Services we offer</a></li>
-									<li><a href="#gallery" class="button">See our handiwork</a></li>
-									<li><a href="#contact" class="button">Get in touch</a></li>
-								</ul>
+								<a href="#contact" class="button">Get in touch</a>
 							</div>
 							
-							<div class="large-5 columns">
-								<img src="http://placehold.it/400x350">
+							<div class="large-6 columns">								
+								<video id="hansen-story" class="video-js" controls preload="auto" width="500" poster="lib/images/hansen-story.png" data-setup="{}">
+									<source src="lib/video/hansen-story.mp4" type='video/mp4'>
+									<source src="lib/video/hansen-story.webm" type='video/webm'>
+									<p class="vjs-no-js">
+									To view this video please enable JavaScript, and consider upgrading to a web browser that
+									<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+									</p>
+								</video>
 							</div>
 						</div>
 					</div>
@@ -234,6 +237,7 @@
 		</footer>
 		
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE0qj2FIV2utUxqWEQ-F2XVYmlmH2Nu_k"></script>
+		<script src="http://vjs.zencdn.net/5.3.0/video.js"></script>
 		<script src="dist/hansen.js"></script>
 		
 		<script data-development="true">
