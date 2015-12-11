@@ -1,24 +1,22 @@
-var Geocoder = (function (GGeocoder) {
+var Geocoder = (function (Geocoder, GeocoderUtilities) {	
+	var GeocoderStatus = GeocoderUtilities.GeocoderStatus;
+	
 	return function (address, callback) {
-		var lat, lng, placeId;
+		var placeId;
 			
-		var geocoder = new GGeocoder();
-		var requestObject = {};
+		var geocoder = new Geocoder();
+		var requestObj = {'address': address};		
 		
-		requestObject.address = address;
-		
-		geocoder.geocode(requestObject, function (results, status) {
+		geocoder.geocode(requestObj, function (results, status) {
 			var result = results[0];
-			lat = result.geometry.location.A;
-			lng = result.geometry.location.F;
-			placeId = result.placeId;
 			
-			if (typeof callback === 'function') {
-				callback({
-					lat: lat,
-					lng: lng 
-				});
-			}		
+			if (status === GeocoderStatus.ERROR) {
+				callback(new Error('Geocoder error: ' + status));
+			}
+			
+			placeId = result.place_id;			
+			
+			callback(result.geometry.location);					
 		});
 		
 		return {
@@ -27,4 +25,4 @@ var Geocoder = (function (GGeocoder) {
 			}
 		};
 	};
-}(window.google.maps.Geocoder));
+}(window.google.maps.Geocoder, window.google.maps));

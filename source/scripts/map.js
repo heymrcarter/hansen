@@ -1,4 +1,7 @@
-var Map = (function ($, google) {
+var Map = (function ($, mapsApi) {
+	var Map = mapsApi.Map,
+		MapEvents = mapsApi.event; 
+	
 	return function (userConfig) {
 		var map, config;
 		
@@ -10,13 +13,13 @@ var Map = (function ($, google) {
 		
 		config = $.extend({}, defaults, userConfig);
 		
-		google.maps.event.addDomListener(window, 'load', function () {
+		MapEvents.addDomListener(window, 'load', function () {
 			Geocoder(config.address, function (latlng) {
-				map = new google.maps.Map(document.getElementById(config.element), {
+				map = new Map(document.getElementById(config.element), {
 					zoom: config.zoom,
-					center: { lat: latlng.lat, lng: latlng.lng }
+					center: latlng
 				});
 			});
 		});		
 	};
-}(window.jQuery, window.google));
+}(window.jQuery, window.google.maps));

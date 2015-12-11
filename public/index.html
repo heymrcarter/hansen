@@ -236,34 +236,12 @@
 			</div>
 		</footer>
 		
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE0qj2FIV2utUxqWEQ-F2XVYmlmH2Nu_k"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaBlq9IxXV_rYClVWXi_gMjy17jyo4FPc"></script>
 		<script src="http://vjs.zencdn.net/5.3.0/video.js"></script>
 		<script src="dist/hansen.js"></script>
 		
 		<script data-development="true">
-			$.mockjax({
-				url: '/contact',
-				status: 202,
-				statusText: 'Accepted',
-				responseText: {
-					error: false,
-					errors: [],
-					message: 'Inquiry submitted',
-					alert: 'Thank you for your inquiry. We\'ll be in touch soon!'	
-				}
-			});
 			
-			$.mockjax({
-				url: '/contact_error',
-				status: 400,
-				statusText: 'Bad request',
-				responseText: {
-					error: true,
-					errors: ['Vehicle model is a required field. Please enter a valid vehicle model!'],
-					message: 'An error occurred',
-					alert: 'Oops! One of your answers didn\'t match what we expected. Please correct the questions marked in red below.'
-				}
-			});
 		</script>
 
 		<script>
